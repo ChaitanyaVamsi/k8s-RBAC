@@ -17,8 +17,8 @@ data:
       username: akash
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2025-12-14T12:12:39Z"
+  #creationTimestamp: "2025-12-14T12:12:39Z"
   name: aws-auth
   namespace: kube-system
   #resourceVersion: "1086"
-  uid: c8868eac-de37-440c-96f1-e80d7900a632
+  #uid: c8868eac-de37-440c-96f1-e80d7900a632
