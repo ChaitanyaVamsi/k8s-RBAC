@@ -2,7 +2,7 @@ apiVersion:
 kind: Role
 metadata:
   namespace: roboshop
-  name: roboshop-trainee
+  name:  roboshop-trainee-role
 rules:
   - apiGroups: [""]
     resources: ["pods"]
