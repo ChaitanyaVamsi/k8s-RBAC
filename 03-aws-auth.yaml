@@ -6,6 +6,11 @@ data:
       - system:bootstrappers
       - system:nodes
       username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - roboshop-readonly
+      userarn: arn:aws:iam::471112667143:user/suresh
+      username: surseh
 kind: ConfigMap
 metadata:
   creationTimestamp: "2025-12-14T12:12:39Z"
