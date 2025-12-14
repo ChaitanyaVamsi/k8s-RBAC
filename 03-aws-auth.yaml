@@ -10,7 +10,7 @@ data:
     - groups:
       - roboshop-readonly
       userarn: arn:aws:iam::471112667143:user/suresh
-      username: surseh
+      username: suresh
 kind: ConfigMap
 metadata:
   creationTimestamp: "2025-12-14T12:12:39Z"
