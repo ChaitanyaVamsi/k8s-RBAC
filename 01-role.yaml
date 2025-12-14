@@ -1,16 +1,16 @@
-apiVersion:
+apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   namespace: roboshop
-  name:  roboshop-trainee-role
+  name: roboshop-trainee
 rules:
-  - apiGroups: [""]
-    resources: ["pods"]
-    verbs: ["get","watch","list"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
 
 # explanation
 # API version used for the Role resource
-# apiVersion:
+# apiVersion: rbac.authorization.k8s.io/v1
 #   # RBAC API version in Kubernetes
 #   # This defines the API version that this Role uses.
 #   kind: Role
