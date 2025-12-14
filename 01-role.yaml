@@ -1,0 +1,39 @@
+apiVersion:
+kind: Role
+metadata:
+  namespace: roboshop
+  name: roboshop-trainee
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get","watch","list"]
+
+# explanation
+# API version used for the Role resource
+# apiVersion:
+#   # RBAC API version in Kubernetes
+#   # This defines the API version that this Role uses.
+#   kind: Role
+#   # Kind of resource being defined; in this case, a 'Role'.
+#   metadata:
+#     # Metadata section includes information about the Role's namespace and name.
+#     namespace: roboshop
+#     # This Role applies to the 'roboshop' namespace. Only resources in this namespace will be affected.
+#     name: roboshop-trainee
+#     # The name of this Role is 'roboshop-trainee'. This is the identifier for this specific role.
+
+# # The rules section defines the permissions granted by this Role
+# rules:
+#   # A list of rules that define which resources can be accessed and what actions can be performed.
+#   - apiGroups: [""]
+#     # The empty string ("") indicates the core API group of Kubernetes (e.g., pods, services).
+#     resources: ["pods"]
+#     # The 'pods' resource means this Role is granting permissions related to pods (smallest deployable units in Kubernetes).
+#     verbs:
+#       # The verbs specify what actions are allowed on the resources.
+#       - "get"
+#         # Allows getting (viewing) the details of a specific pod.
+#       - "watch"
+#         # Allows watching for changes to the pods (e.g., state changes).
+#       - "list"
+#         # Allows listing all the pods in the 'roboshop' namespace.
