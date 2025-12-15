@@ -2,10 +2,15 @@
 # This maps AWS IAM users to Kubernetes users and GROUPS
 # The group name defined here is used later in RoleBinding
 
+# If multiple users are in the same group,
+# and a RoleBinding uses that group,
+# then ALL those users automatically get the permissions of the associated Role.
+
 apiVersion: v1
 data:
   mapRoles: |
-    - rolearn: arn:aws:iam::471112667143:role/eksctl-sampleapp-nodegroup-robosho-NodeInstanceRole-zyBKqcUgKg1S
+    - rolearn: arn:aws:iam::471112667143:role/eksctl-sampleapp-nodegroup-robosho-NodeInstanceRole-zyBKqcUgKg1S # this may change
+      groups:
       - system:bootstrappers
       - system:nodes
       username: system:node:{{EC2PrivateDNSName}}
@@ -20,12 +25,12 @@ data:
       username: akash
     - groups:
       - roboshop-trainee
-      userarn: arn:aws:iam::471112667143:user/akash
-      username: ravi
+      userarn: arn:aws:iam::471112667143:user/raj
+      username: raj
     - groups:
       - roboshop-trainee
-      userarn: arn:aws:iam::471112667143:user/akash
-      username: rajesh
+      userarn: arn:aws:iam::471112667143:user/ravi
+      username: ravi
 kind: ConfigMap
 metadata:
   #creationTimestamp: "2025-12-14T12:12:39Z"
