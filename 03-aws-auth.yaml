@@ -1,3 +1,7 @@
+# 1️⃣ aws-auth ConfigMap
+# This maps AWS IAM users to Kubernetes users and GROUPS
+# The group name defined here is used later in RoleBinding
+
 apiVersion: v1
 data:
   mapRoles: |
@@ -8,13 +12,21 @@ data:
       username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
     - groups:
-      - roboshop-trainee
+      - roboshop-trainee    # 👈 Group created here
       userarn: arn:aws:iam::471112667143:user/suresh
       username: suresh
     - groups:
       - roboshop-admin
       userarn: arn:aws:iam::471112667143:user/akash
       username: akash
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::471112667143:user/akash
+      username: ravi
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::471112667143:user/akash
+      username: rajesh
 kind: ConfigMap
 metadata:
   #creationTimestamp: "2025-12-14T12:12:39Z"

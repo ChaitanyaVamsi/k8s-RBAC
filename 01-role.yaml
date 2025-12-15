@@ -1,8 +1,12 @@
+# 2️⃣ Role
+# This defines WHAT permissions are allowed
+# It does NOT know anything about users or groups
+
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   namespace: roboshop
-  name: roboshop-trainee-role
+  name: roboshop-trainee-role # 👈 Role name (independent)
 rules:
 - apiGroups: [""] # "" indicates the core API group
   resources: ["pods"]

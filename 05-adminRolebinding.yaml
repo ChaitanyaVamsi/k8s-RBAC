@@ -19,10 +19,10 @@ metadata:
 subjects:
 # You can specify more than one "subject"
 - kind: User
-  name: akash # "name" is case sensitive
+  name: akash  # must match aws-auth
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   # "roleRef" specifies the binding to a Role / ClusterRole
-  kind: ClusterRole #this must be Role or ClusterRole
+  kind: ClusterRole # this must be Role or ClusterRole
   name: roboshop-storage-ro-cr # this must match the name of the Role or ClusterRole you wish to bind to
   apiGroup: rbac.authorization.k8s.io
