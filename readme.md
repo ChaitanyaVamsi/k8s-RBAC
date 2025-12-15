@@ -296,4 +296,8 @@ roleRef:
 
 ![Kubernetes Service Account RBAC Flow](SARBAC.png)
 
+eksctl utils associate-iam-oidc-provider --cluster sampleapp --approve
+
 eksctl create iamserviceaccount --cluster sampleapp --namespace roboshop --name secret-reader-sa --attach-policy-arn arn:aws:iam::471112667143:policy/RoboshopMysqlRead --approve
+
+aws secretsmanager get-secret-value --secret-id roboshop/dev/mysql_password --query SecretString --output text
